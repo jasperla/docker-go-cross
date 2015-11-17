@@ -1,6 +1,6 @@
 # docker-go-cross
 
-Simple build container for cross-compiling Go binaries.
+Simple build container for cross-compiling Go binaries, available on the [hub](https://hub.docker.com/r/jasperla/docker-go-cross/).
 
 ## Howto
 
@@ -8,3 +8,4 @@ Simple build container for cross-compiling Go binaries.
 
 This will produce a myapp-openbsd-amd64 binary in `$PWD`.
 `GOLANG_TARGET_PLATFORM` can be set to any platform supported by Go.
+

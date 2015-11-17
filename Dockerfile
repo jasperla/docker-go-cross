@@ -8,6 +8,8 @@ ENV GOLANG_VERSION 1.4.2
 
 ENV GOROOT_BOOTSTRAP /usr/src/go/
 
+ENV APPROOT /go/src/app
+
 RUN curl -sSL https://golang.org/dl/go$GOLANG_VERSION.src.tar.gz \
 		| tar -v -C /usr/src -xz
 
@@ -17,10 +19,10 @@ RUN cd $GOROOT_BOOTSTRAP/src \
 	&& set -ex \
 	&& ./make.bash
 
-RUN mkdir -p /go/src/app
-WORKDIR /go/src/app
+RUN mkdir -p $APPROOT
+WORKDIR $APPROOT
 
-VOLUME /go/src/app
+VOLUME $APPROOT
 
 COPY ./run.sh /
 RUN chmod +x /run.sh
